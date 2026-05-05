@@ -1,0 +1,22 @@
+# Core ML stack
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Image processing
+Pillow>=10.0.0
+
+# CLIP embeddings (with QuickGELU support for OpenAI-pretrained weights)
+open_clip_torch>=2.20.0
+
+# Numerical + plotting
+numpy>=1.24.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0
+
+# Dataset visualization & curation
+fiftyone>=0.23.0
+
+# Note: tkinter is part of the Python standard library, not pip-installable.
+# On most Linux distributions you may need to install it separately:
+#   Debian/Ubuntu:  sudo apt install python3-tk
+#   Fedora/RHEL:    sudo dnf install python3-tkinter

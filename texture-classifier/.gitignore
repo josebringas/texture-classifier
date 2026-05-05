@@ -1,0 +1,57 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ── Virtual environments ────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── IDE / editor ────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Project artifacts (generated, not source) ───────────
+# Trained model weights and per-run metadata
+model/model_v*/
+
+# CLIP embedding cache (regenerable from textures/)
+embeddings_cache.npz
+
+# Confusion matrix exports
+confusion_matrix*.png
+
+# FiftyOne local dataset cache
+.fiftyone/
+fiftyone.db
+
+# ── Dataset images ──────────────────────────────────────
+# We ship folder structure only — actual images are user-supplied.
+# Comment out these lines if you want to commit a sample dataset.
+textures/**/*.jpg
+textures/**/*.jpeg
+textures/**/*.png
+textures/**/*.tif
+textures/**/*.tiff
+
+# Novel/inbox images for testing inference
+novel/**/*.jpg
+novel/**/*.jpeg
+novel/**/*.png
+novel/**/*.tif
+novel/**/*.tiff
+
+# ── Logs ────────────────────────────────────────────────
+*.log

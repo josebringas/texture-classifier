@@ -1,4 +1,5 @@
 # TextureClassifier
+![Texture Classifier UI](docs/images/TC_UI_02.png)
 
 A vision-based tool for classifying texture maps and routing them into structured folders. Built on a ResNet18 fine-tuned against a CLIP-curated dataset of five material categories: **brick**, **concrete-plaster**, **fabric**, **nature**, and **wood**.
 
@@ -10,6 +11,8 @@ Two natural extensions sit on the roadmap. *Audit mode* reads an existing folder
 
 **Validated**: ~300 textures, 5 classes, 96.6% held-out validation accuracy.
 **Not yet validated**: larger datasets, taxonomies with 10+ classes, visually overlapping categories (e.g. "polished concrete" vs "matte concrete").
+
+![Texture Classifier UI](docs/images/FO_UI_01.png)
 
 ---
 
@@ -58,6 +61,8 @@ If you're on Linux and `tkinter` is missing, install it via your package manager
 
 Drop your training images into `textures/<class>/` — the folder names become the class labels. The repo ships with five empty class folders matching the validated taxonomy; replace or rename them as needed. See `textures/README.md` for image requirements.
 
+![Texture Classifier UI](docs/images/Training_01.png)
+
 ### 2. Normalize the dataset
 
 ```bash
@@ -82,6 +87,8 @@ python launch_visualizer.py
 
 Opens FiftyOne with a UMAP plot of the embeddings. Use this to spot mislabeled samples, ambiguous edge cases, and class imbalance before training. Read more in [docs/dataset-curation.md](docs/dataset-curation.md).
 
+![Texture Classifier UI](docs/images/FO_UI_02.png)
+
 ### 5. Train
 
 ```bash
@@ -98,6 +105,8 @@ python visualizer_DataBleeding.py
 
 Builds a confusion matrix on the held-out validation subset only — using `val_indices.json` from the model bundle, with a seed cross-check to ensure indices match the model. Per-class accuracies print to console; the matrix saves to a PNG named after the model version.
 
+![Texture Classifier UI](docs/images/confusion_matrix_v01.jpg)
+
 ### 7. Use
 
 ```bash
@@ -105,6 +114,8 @@ python TextureClassifier_v001.py
 ```
 
 Launches the UI. Set the inbox folder (`novel/` by default) and the UE destination (`Content/Textures/` of your project), pick a confidence threshold, click **RUN BATCH SORT**.
+
+![Texture Classifier UI](docs/images/TC_UI_01.png)
 
 ---
 
